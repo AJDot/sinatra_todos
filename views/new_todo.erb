@@ -1,0 +1,13 @@
+<form action="/lists/<%= @id %>" method="post">
+  <dl>
+    <dt>
+      <label for="list_name">Enter a new todo item:</label>
+    </dt>
+    <dd>
+      <input name="todo_name" placeholder="Something to do" type="text" value="">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" values="Add">
+  </fieldset>
+</form>
