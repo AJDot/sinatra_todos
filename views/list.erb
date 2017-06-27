@@ -1,6 +1,9 @@
 <section id="todos">
   <header>
     <h2><%= @list[:name] %></h2>
+    <ul>
+      <li><a class="edit" href="/lists/<%= params[:id] %>/edit">Edit List</a></li>
+    </ul>
   </header>
   <ul>
     <% @list[:todos].each do |todo| %>
@@ -10,20 +13,6 @@
     <% end %>
   </ul>
 </section>
-
-<form action="/lists/<%= @id %>" method="post">
-  <dl>
-    <dt>
-      <label for="todo_name">Enter a new todo item:</label>
-    </dt>
-    <dd>
-      <input name="todo_name" placeholder="Something to do" type="text" value="">
-    </dd>
-  </dl>
-  <fieldset class="actions">
-    <input type="submit" values="Add">
-  </fieldset>
-</form>
 
 <% content_for :header_links do %>
   <a href="/lists">All Lists</a>
